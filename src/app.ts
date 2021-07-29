@@ -18,6 +18,9 @@ import createHttpsProxyAgent from 'https-proxy-agent';
 import createSocksProxyAgent from 'socks-proxy-agent';
 import * as config from '../config';
 
+type ExpressRequest = Parameters<Parameters<ReturnType<typeof express>['all']>[1]>[0];
+type ExpressResponse = Parameters<Parameters<ReturnType<typeof express>['all']>[1]>[1];
+
 const rootPath = path.resolve(__dirname, '../');
 const distPath = path.join(rootPath, 'wwwroot/');
 
