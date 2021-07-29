@@ -28,8 +28,11 @@ const distPath = path.join(rootPath, 'wwwroot/');
 const app = express();
 app.use(cookieParser());
 app.use(compression());
+app.use(express.json());
+app.use(express.urlencoded({
+  extended: true
+}));
 app.use(express.raw({ type: '*/*', limit: '102400kb' }));
-app.use(express.urlencoded());
 app.use(function(req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   next();
