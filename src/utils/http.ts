@@ -33,6 +33,10 @@ export const findRequestFile = (basePath: string, relativePath: string): string 
   if (fs.existsSync(autoAbsolutePath) && fs.lstatSync(autoAbsolutePath).isFile()) {
     return autoAbsolutePath;
   }
+  autoAbsolutePath = `${absolutePath}.js`;
+  if (fs.existsSync(autoAbsolutePath) && fs.lstatSync(autoAbsolutePath).isFile()) {
+    return autoAbsolutePath;
+  }
   autoAbsolutePath = path.join(absolutePath, 'index.ts');
   if (fs.existsSync(autoAbsolutePath) && fs.lstatSync(autoAbsolutePath).isFile()) {
     return autoAbsolutePath;
