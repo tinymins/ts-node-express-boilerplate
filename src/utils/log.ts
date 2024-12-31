@@ -9,5 +9,5 @@
 import moment from 'moment';
 
 export const log = (s: string) => {
-  console.log(`[${moment().format('YYYY/MM/DD hh:mm:ss')}] ${s}`);
+  console.log(`[${moment().format('YYYY/MM/DD HH:mm:ss')}] ${s}`);
 };
